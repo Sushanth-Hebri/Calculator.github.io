@@ -1,0 +1,181 @@
+
+        body,
+        html {
+            margin: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+.main{
+    background-color: rgb(240, 233, 233);
+}
+.mainnew{
+    background-color: rgb(0, 0, 0);
+}
+        .outer {
+            height: 700px;
+            width: auto;
+            padding: 10px;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            justify-self: center;
+            box-shadow: 10px 10px 3px 3px black;
+            border-radius: 5%;
+        }
+
+        .inner {
+            height: 700px;
+            width: 500px;
+            background-color: aquamarine;
+            border-radius: 5%;
+        }
+
+        .screen {
+            width: 450px;
+            height: 70px;
+            /* background-color: blueviolet; */
+            padding: 5px;
+            margin-left: 20px;
+            margin-top: 10px;
+           
+        }
+
+        .body {
+            height: 586px;
+            width: 500px;
+            background-color: blue;
+            border-top:5px black groove;
+            border-bottom-left-radius: 5%;
+            border-bottom-right-radius: 5%;
+        }
+
+        .row1,
+        .row2,
+        .row3,
+        .row4 {
+            height: 60px;
+            width: 490px;
+            background-color: brown;
+            padding: 5px;
+            margin-top: 25px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .b1,
+        .b2,
+        .b3,
+        .b4 {
+            height: 50px;
+            width: 60px;
+            background-color: chartreuse;
+            margin-right: 10px;
+            border-radius: 40%;
+            box-shadow: 3px 2px 1px 0px rgb(34, 32, 32);
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            font-weight: 500px;
+            font-family: 'Anton', sans-serif;
+            font-family: 'Playfair', serif;
+            color:black !important;
+        }
+
+        .equal {
+            height: 50px;
+            width: 90px;
+            background-color: chartreuse;
+            margin-right: 10px;
+            border-radius: 40%;
+        }
+
+        .pressed {
+            transform: scale(0.8);
+            box-shadow: 0px 1px 1px 0px rgb(12, 12, 12);
+            background-color: rgb(160, 207, 114);
+        }
+
+        #display {
+            width: 440px;
+            height: 60px;
+            padding: 5px;
+            font-size: 36px;
+            border-radius:20px;
+        }
+
+        .lights{
+            height:30px;
+            width:50px;
+            border-radius:30%;
+            background-color:rgb(196, 21, 129) ;
+            display: flex;
+            justify-content: center;
+            align-items:center;
+            color:white;
+            font-size:20px;
+            cursor:pointer;
+        }
+        .newlight{
+            background-color: rgb(38, 31, 31);
+            animation: running-light-animation 3s linear infinite;
+        }
+        h5{
+            background-color: black;
+        }
+        .foot{
+            background-color: brown;
+            display: flex;
+          justify-content: space-evenly;
+          margin-top: 10px;
+            color:white;
+            height:60px;
+            margin-top: 25px;
+        }
+        /* .foot:nth-child(1),
+        .foot:nth-child(1){
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        } */
+        @keyframes running-light-animation {
+            0% {
+              
+                background-color: red;
+            }
+            25% {
+                background-color: blue;
+            }
+            50% {
+                background-color: green;
+            }
+            75% {
+                background-color: yellow;
+            }
+            100% {
+                
+                background-color: red;
+            }
+        }
+        .back{
+            margin-left:39px;
+        }
+        .sushanth{
+            display: flex;
+        }
+        .dedication{
+            background-color: aquamarine;
+            height:30px;
+            width:auto;
+            padding: 10px;
+            margin-left: 50px;
+            border-radius: 30%;
+            display: flex;
+            align-items: center;
+        }
+    

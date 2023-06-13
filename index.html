@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Playfair:wght@600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Orbitron:wght@700&family=Playfair:wght@600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="calculator.css">
+</head>
+
+<body class="main">
+    <div class="outer" >
+        <div class="inner">
+            <div class="screen">
+                <input type="text" id="display" readonly>
+            </div><br>
+            <audio id="beepSound" src="beep.mp3"></audio>
+            <div class="body">
+                <br>
+                <div class="lights" onclick="light(this)">
+                    Light
+                </div>
+                <div class="sushanth">
+                    <div class="b1 back" onclick="back(this)">CE</div>
+                    <div class="dedication"><h6>Sushanth pvt.ltd(TM)</h6></div>
+                </div>
+              
+                <div class="row1">
+                    <div class="b1" onclick="appendToDisplay('1',this)">1</div>
+                    <div class="b2" onclick="appendToDisplay('2',this)">2</div>
+                    <div class="b3" onclick="appendToDisplay('3',this)">3</div>
+                    <div class="b4" onclick="clearDisplay(this)">AC</div>
+                </div>
+                <div class="row2">
+                    <div class="b1" onclick="appendToDisplay('4',this)">4</div>
+                    <div class="b2" onclick="appendToDisplay('5',this)">5</div>
+                    <div class="b3" onclick="appendToDisplay('6',this)">6</div>
+                    <div class="b4" onclick="handleOperator('+',this)">+</div>
+                </div>
+                <div class="row3">
+                    <div class="b1" onclick="appendToDisplay('7',this)">7</div>
+                    <div class="b2" onclick="appendToDisplay('8',this)">8</div>
+                    <div class="b3" onclick="appendToDisplay('9',this)">9</div>
+                    <div class="b4" onclick="handleOperator('-',this)">-</div>
+                </div>
+                <div class="row4">
+                    <div class="b1" onclick="appendToDisplay('0',this)">0</div>
+                    <div class="b2" onclick="handleOperator('/',this)">/</div>
+                    <div class="b3" onclick="handleOperator('*',this)">x</div>
+                    <div class="b3" onclick="handleOperator('%',this)">%</div>
+                </div>
+                <div class="foot">
+                    <div class="b3" onclick="addToMemory(this)">M+</div>
+                    <div class="b3" onclick="recallMemory(this)">MR</div>
+                    <div class="b3" onclick="clearMemory(this)">MC</div>
+                    <div class="b4 equal" onclick="calculate(this)">=</div>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- <script>
+function clickable(element) {
+      element.classList.toggle("pressed");
+      setTimeout(function() {
+        element.classList.remove("pressed");
+      }, 200); 
+    }
+</script> -->
+
+    <!-- actual code -->
+    <script>
+        let displayValue = "";
+
+        function appendToDisplay(value, element) {
+            displayValue += value;
+            updateDisplay();
+            clickable(element);
+
+        }
+
+        function handleOperator(operator, element) {
+            displayValue += " " + operator + " ";
+            updateDisplay();
+            clickable(element);
+        }
+
+        function calculate(element) {
+            const result = eval(displayValue);
+            displayValue = result.toString();
+            updateDisplay();
+            clickable(element);
+        }
+
+        function clearDisplay(element) {
+            displayValue = "";
+            updateDisplay();
+            clickable(element);
+        }
+        function addToMemory(element) {
+            const currentValue = eval(displayValue);
+            memoryValue += currentValue;
+            updateDisplay();
+            clickable(element);
+        }
+
+        function recallMemory(element) {
+            displayValue += memoryValue;
+            updateDisplay();
+            clickable(element);
+        }
+
+        function clearMemory(element) {
+            memoryValue = 0;
+            updateDisplay();
+            clickable(element);
+        }
+
+        function back(element) {
+            displayValue = displayValue.slice(0, -1);
+    updateDisplay();
+    clickable(element);
+}
+
+        function updateDisplay() {
+            const display = document.getElementById("display");
+            display.value = displayValue;
+
+        }
+        function clickable(element) {
+            element.classList.toggle("pressed");
+            setTimeout(function () {
+                element.classList.remove("pressed");
+            }, 200);
+            var audio = document.getElementById("beepSound");
+            audio.play();
+            setTimeout(function () {
+                element.classList.remove("pressed");
+            }, 100);
+        }
+
+    </script>
+    <script>
+        function light(ele) {
+            var outer = document.querySelector('.outer');
+
+            outer.classList.toggle('newlight');
+
+            var bg = document.querySelector('.main');
+
+            bg.classList.toggle('mainnew');
+        }
+
+       
+    </script>
+</body>
+
+</html>
